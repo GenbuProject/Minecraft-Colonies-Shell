@@ -3,6 +3,7 @@
 <HTML>
 	<Head>
 		<Meta Charset = "UTF-8" />
+		<Meta Name = "Viewport" Content = "Width=Device-Width, Initial-Scale=1.0" />
 		<Link Rel = "Shortcut Icon" Href = "favicon.png" />
 
 		<Title>Minecraft Colonies Shell</Title>
@@ -16,7 +17,11 @@
 
 		<Style>
 			.mdl-layout__content {
-				Margin: 2em;
+				Margin: 2pc;
+			}
+
+			.mdl-grid > .mdl-cell {
+				Border-Radius: 2px;
 			}
 		</Style>
 
@@ -35,14 +40,13 @@
 			わたし達と一緒に、進んでいきましょう！！
 
 			三('ω')三( ε: )三(.ω.)三( :3 )三('ω')三( ε: )三(.ω.)三( :3 )
-			三 2017/06/03
-			三 《Genbu Project代表》Genbu Hase
+			三 2017/06/03 Genbu Project リーダーより
 			三('ω')三( ε: )三(.ω.)三( :3 )三('ω')三( ε: )三(.ω.)三( :3 )
 		-->
 	</Head>
 
-	<Body Class = "mdl-layout mdl-js-layout">
-		<Header Class = "mdl-layout__header">
+	<Body Class = "mdl-layout mdl-js-layout" Style = "Background: URL('Header.png') Center / Cover">
+		<Header Class = "mdl-layout__header mdl-layout__header--transparent">
 			<Div Class = "mdl-layout__header-row">
 				<Span Class = "mdl-layout-title">Minecraft Colonies Shell</Span>
 
@@ -59,20 +63,8 @@
 		</Div>
 
 		<Div Class = "mdl-layout__content">
-			<Div>
-				<Div Class = "mdl-card mdl-shadow--2dp">
-					<Div Class = "mdl-card__title">
-						<H2 Class = "mdl-card__title-text">Welcome</H2>
-					</Div>
-
-					<Div Class = "mdl-card__supporting-text">
-						Minecraft Colonies Shellへようこそ。
-					</Div>
-
-					<Div Class = "mdl-card__actions mdl-card--border">
-						<Button Class = "mdl-button mdl-js-button mdl-js-ripple-effect">うひょー(´↑ω↑)</Button>
-					</Div>
-				</Div>
+			<Div Class = "mdl-grid">
+				<Div Class = "mdl-cell mdl-cell--3-offset mdl-cell--6-col mdl-color--white mdl-shadow--4dp">Test</Div>
 			</Div>
 		</Div>
 	</Body>
