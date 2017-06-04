@@ -9,7 +9,16 @@
 		<Title>Minecraft Colonies Shell</Title>
 
 		<Script Src = "https://genbuproject.github.io/Programs/DOM Extender/DOM Extender v2.2.js"></Script>
-		<Script>DOM.importAPI("https://genbuproject.github.io/Programs/Sync Helper/Sync Helper v1.1.js")</Script>
+
+		<Script>
+			let GBase = null;
+
+			DOM.importAPI("https://genbuproject.github.io/Programs/Sync Helper/Sync Helper v1.1.js", function () {
+				GBase = new GoogleAPI({
+					ID: ""
+				});
+			});
+		</Script>
 
 		<Link Rel = "StyleSheet" Href = "https://fonts.googleapis.com/icon?family=Material+Icons" />
 		<Link Rel = "StyleSheet" Href = "https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
@@ -41,7 +50,7 @@
 		-->
 	</Head>
 
-	<Body Class = "mdl-layout mdl-js-layout" Style = "Background: URL('Images/Header.png') Center / Cover">
+	<Body Class = "mdl-layout mdl-js-layout" Style = "Background: URL('Images/Back.png') Center / Cover">
 		<Header Class = "mdl-layout__header mdl-layout__header--transparent">
 			<Div Class = "mdl-layout__header-row">
 				<Span Class = "mdl-layout-title">Minecraft Colonies Shell</Span>
@@ -62,7 +71,7 @@
 		<Div Class = "mdl-layout__content">
 			<Div Class = "mdl-grid">
 				<Div Class = "mdl-cell mdl-cell--2-offset mdl-cell--8-col mdl-color--white mdl-color-text--grey-800 mdl-shadow--4dp" Style = "Padding: 3pc 2pc">
-					<H3 Class = "mdl-layout-title"><Img Src = "Images/Logo.png"></Img></H3>
+					<H3 Class = "mdl-layout-title" Style = "Text-Align: Center"><Img Src = "Images/Logo.png"></Img></H3>
 
 					<P>
 						このアップローダーはMinecraft PEを活性化するため、有志の協力を経て完成した努力の結晶です。
@@ -76,7 +85,7 @@
 				</Div>
 				
 				<Div Class = "mdl-cell mdl-cell--2-offset mdl-cell--4-col mdl-card mdl-shadow--4dp">
-					<Div Class = "mdl-card__title" Style = "Background: URL('Images/Header.png') Center / Cover; Color: White">
+					<Div Class = "mdl-card__title" Style = "Background: URL('Images/Back.png') Center / Cover; Color: White">
 						<H2 Class = "mdl-card__title-text">Sign Up</H2>
 					</Div>
 
@@ -90,7 +99,7 @@
 				</Div>
 
 				<Div Class = "mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp">
-					<Div Class = "mdl-card__title" Style = "Background: URL('Images/Header.png') Center / Cover; Color: White">
+					<Div Class = "mdl-card__title" Style = "Background: URL('Images/Back.png') Center / Cover; Color: White">
 						<H2 Class = "mdl-card__title-text">Sign In</H2>
 					</Div>
 
