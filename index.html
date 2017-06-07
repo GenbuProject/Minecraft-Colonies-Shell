@@ -17,7 +17,13 @@
 				GBase = new GoogleAPI({
 					ID: "107562519312-bbaa0fedfsd8nsob29fkbo3asu5eulnt.apps.googleusercontent.com",
 					Key: atob("UlEzVjh0M1VjQXI2ODNLNDBNdTNadlhr"),
-					Url: "https://genbuproject.github.io/Minecraft-Colonies-Shell/"
+					Url: "http://localhost:8001/" //"https://genbuproject.github.io/Minecraft-Colonies-Shell/"
+				});
+
+				document.querySelectorAll('*[UUID="Handler__SignIn"]').forEach(function (Elem, Index, Parent) {
+					Elem.addEventListener("click", function () {
+						GBase.loginOnDialog(GoogleAPI.SCOPE.PLUS);
+					});
 				});
 			});
 		</Script>
@@ -41,8 +47,8 @@
 				<Div Class = "mdl-layout-spacer"></Div>
 
 				<Nav Class = "mdl-navigation">
-					<A Class = "mdl-navigation__link" Href = "#">Sign Up</A>
-					<A Class = "mdl-navigation__link" Href = "#">Sign In</A>
+					<A Class = "mdl-navigation__link" Href = "About.html">About</A>
+					<A UUID = "Handler__SignIn" Class = "mdl-navigation__link" Href = "#">Sign In</A>
 				</Nav>
 			</Div>
 		</Header>
@@ -57,7 +63,7 @@
 					<H3 Class = "mdl-layout-title"><Img Src = "Images/Logo.png" Style = "Width: 100%" /></H3>
 
 					<P>
-						このアップローダーはMinecraft及びMinecraft Pocket Edition界隈を活性化するため、有志の協力を経て完成した努力の結晶です。
+						このアップローダーはMinecraft界隈を活性化するため、有志の協力を経て完成した努力の結晶です。
 						<Br /><Br />
 						わたし達は考えました。<Br />
 						もし1人1人では何も出来なくとも、集団になれば盛り上げる事が出来るはずだ、と。
@@ -67,21 +73,7 @@
 					</P>
 				</Div>
 				
-				<Div Class = "mdl-cell mdl-cell--2-offset mdl-cell--4-col mdl-card mdl-shadow--4dp">
-					<Div Class = "mdl-card__title" Style = "Height: 100px; Background: URL('Images/Viewports/0005.png') Center / Cover">
-						<H2 Class = "mdl-card__title-text mdl-color-text--white">Sign Up</H2>
-					</Div>
-
-					<Div Class = "mdl-card__supporting-text">
-						Googleアカウントでサインアップしてください。
-					</Div>
-
-					<Div Class = "mdl-card__actions mdl-card--border">
-						<A Class = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">Sign Up</A>
-					</Div>
-				</Div>
-
-				<Div Class = "mdl-cell mdl-cell--4-col mdl-card mdl-shadow--4dp">
+				<!--<Div Class = "mdl-cell mdl-cell--2-offset mdl-cell--4-col mdl-card mdl-shadow--4dp">
 					<Div Class = "mdl-card__title" Style = "Height: 100px; Background: URL('Images/Viewports/0005.png') Center / Cover">
 						<H2 Class = "mdl-card__title-text mdl-color-text--white">Sign In</H2>
 					</Div>
@@ -91,9 +83,9 @@
 					</Div>
 
 					<Div Class = "mdl-card__actions mdl-card--border">
-						<A Class = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">Sign In</A>
+						<Button UUID = "Handler__SignIn" Class = "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">Sign In</Button>
 					</Div>
-				</Div>
+				</Div>-->
 			</Div>
 		</Div>
 	</Body>
