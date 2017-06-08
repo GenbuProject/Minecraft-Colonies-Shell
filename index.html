@@ -11,8 +11,9 @@
 		<Script Src = "https://genbuproject.github.io/Programs/DOM Extender/DOM Extender v2.2.js"></Script>
 
 		<Script>
-			let GBase = null;
-
+			let GBase = null,
+				accountInfo = {};
+				
 			DOM.importAPI("https://genbuproject.github.io/Programs/Sync Helper/Sync Helper v1.1.js", function () {
 				GBase = new GoogleAPI({
 					ID: "107562519312-bbaa0fedfsd8nsob29fkbo3asu5eulnt.apps.googleusercontent.com",
@@ -20,16 +21,18 @@
 					Url: "https://genbuproject.github.io/Minecraft-Colonies-Shell/" //"http://localhost:8001/"
 				});
 
-				document.querySelectorAll('*[UUID="Handler__SignIn"]').forEach(function (Elem, Index, Parent) {
+				DOM('@*[UUID="Handler__SignIn"]').forEach(function (Elem, Index, Parent) {
 					Elem.addEventListener("click", function () {
 						GBase.loginOnDialog(GoogleAPI.SCOPE.PLUS);
 					});
 				});
+				
+				accountInfo = GBase.getUserInfo();
+				
+				
+				
+				DOM("#AccountName").textContent = accountInfo.displayName;
 			});
-			
-			window.onbeforeunload = function (E) {
-				return "イキスギィ！";
-			};
 		</Script>
 
 		<Link Rel = "StyleSheet" Href = "https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -52,7 +55,7 @@
 
 				<Nav Class = "mdl-navigation">
 					<A Class = "mdl-navigation__link" Href = "About.html">About</A>
-					<A UUID = "Handler__SignIn" Class = "mdl-navigation__link" Href = "#">Sign In</A>
+					<A ID = "AccountName" UUID = "Handler__SignIn" Class = "mdl-navigation__link" Href = "#">Sign In</A>
 				</Nav>
 			</Div>
 		</Header>
