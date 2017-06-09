@@ -10,31 +10,11 @@
 
 		<Script Src = "https://genbuproject.github.io/Programs/DOM Extender/DOM Extender v2.2.js"></Script>
 
-		<Script>
-			let GBase = null;
-			
-			DOM.importAPI("https://genbuproject.github.io/Programs/Sync Helper/Sync Helper v1.1.js", function () {
-				GBase = new GoogleAPI({
-					ID: "107562519312-bbaa0fedfsd8nsob29fkbo3asu5eulnt.apps.googleusercontent.com",
-					Key: atob("UlEzVjh0M1VjQXI2ODNLNDBNdTNadlhr"),
-					Url: "https://genbuproject.github.io/Minecraft-Colonies-Shell/" //"http://localhost:8001/"
-				});
-
-				DOM('@*[UUID="Handler__SignIn"]').forEach(function (Elem, Index, Parent) {
-					Elem.addEventListener("click", function () {
-						if (!navigator.isMobile()) {
-							GBase.loginOnDialog(GoogleAPI.SCOPE.PLUS);
-						} else {
-							GBase.login(GoogleAPI.SCOPE.PLUS);
-						}
-					});
-				});
-			});
-		</Script>
-
 		<Link Rel = "StyleSheet" Href = "https://fonts.googleapis.com/icon?family=Material+Icons" />
 		<Link Rel = "StyleSheet" Href = "https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
 		<Script Src = "https://code.getmdl.io/1.3.0/material.min.js" Defer = "Defer"></Script>
+
+		<Script Src = "Main.js"></Script>
 
 		<Style>
 			.mdl-grid > .mdl-cell {
