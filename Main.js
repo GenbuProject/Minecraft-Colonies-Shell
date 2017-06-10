@@ -25,10 +25,14 @@ DOM.importAPI("https://genbuproject.github.io/Programs/Sync Helper/Sync Helper v
 window.addEventListener("DOMContentLoaded", function () {
 	DOM('@*[UUID="Handler__SignIn"]').forEach(function (Elem, Index, Parent) {
 		Elem.addEventListener("click", function () {
-			if (!navigator.isMobile()) {
-				GBase.loginOnDialog(GoogleAPI.SCOPE.PLUS);
+			if (!GBase.hasLogined()) {
+				if (!navigator.isMobile()) {
+					GBase.loginOnDialog(GoogleAPI.SCOPE.PLUS);
+				} else {
+					GBase.login(GoogleAPI.SCOPE.PLUS);
+				}
 			} else {
-				GBase.login(GoogleAPI.SCOPE.PLUS);
+
 			}
 		});
 	});
