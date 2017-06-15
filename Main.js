@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", function () {
 	DOM('@A:not([UUID="Handler__SignIn"])').forEach(function (Elem, Index, Parent) {
 		Elem.addEventListener("click", function (Event) {
 			Event.preventDefault();
-			window.parent.DOM("@Div.mdl-layout__content > IFrame")[0].src = Elem.href;
+			window.parent.DOM("@IFrame.mdl-layout__content")[0].src = Event.target.href;
 		});
 	});
 });
@@ -48,6 +48,6 @@ window.addEventListener("DOMContentLoaded", function () {
 window.addEventListener("DOMNodeInserted", function (Event) {
 	if (Event.target.nodeName == "A") {
 		Event.preventDefault();
-		window.parent.DOM("@Div.mdl-layout__content > IFrame")[0].src = Event.target.href;
+		window.parent.DOM("@IFrame.mdl-layout__content")[0].src = Event.target.href;
 	}
 });
